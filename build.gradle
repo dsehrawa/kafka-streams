@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group 'com.dsehrawat'
+version '1.0-SNAPSHOT'
+
+repositories {
+    maven {
+        url "https://repo.gradle.org/gradle/libs-releases-local"
+    }
+    mavenCentral()
+    gradlePluginPortal()
+}
+
+dependencies {
+    implementation 'org.apache.kafka:kafka-streams:3.3.1'
+    implementation group: 'io.maryk.rocksdb', name: 'rocksdbjni', version: '6.17.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
